@@ -1,0 +1,331 @@
+/* Custom styles for DVP Gift Center */
+
+.product-card {
+  transition: transform 0.2s;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* For product listing page, ensure the entire image fits without cropping */
+.product-image-contain {
+  object-fit: contain;
+  background-color: #ffffff; /* prevent transparency from showing card bg */
+  width: 100%;
+  display: block;
+}
+
+/* Price styling for homepage product cards */
+.price-block {
+  display: flex;
+  align-items: baseline;
+}
+
+.price-lkr {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.price-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .price-amount {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+}
+
+/* Modern hero with soft pattern */
+.hero-modern {
+  position: relative;
+  color: #fff;
+  padding: 5rem 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0 20%, transparent 21%) 0 0/ 120px 120px,
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.06) 0 15%, transparent 16%) 0 0/ 140px 140px,
+    linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%);
+}
+
+.hero-cta {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Category chips */
+.category-chip {
+  border: 1px solid #e5e7eb !important;
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Horizontal scroll row for cards */
+.scroll-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.scroll-card {
+  scroll-snap-align: start;
+}
+
+/* 5-column grid for trending (2 rows x 5 items when 10 items) */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Home product card hover indicator (AliExpress-like) */
+.home-grid .product-card {
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.home-grid .product-card:hover,
+.home-grid .product-card:focus-within {
+  border-color: rgba(13,110,253,0.35); /* bootstrap primary */
+  box-shadow: 0 8px 24px rgba(13,110,253,0.15);
+}
+
+.home-grid .product-card:focus-visible {
+  outline: 3px solid rgba(13,110,253,0.25);
+  outline-offset: 2px;
+}
+
+.home-grid .click-indicator {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(13,110,253,0.12); /* light primary, not black */
+  color: #0d6efd;
+  border: 1px solid rgba(13,110,253,0.35);
+  border-radius: 9999px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all .15s ease-in-out;
+  pointer-events: none; /* ignore pointer so card click works */
+}
+
+.home-grid .product-card:hover .click-indicator,
+.home-grid .product-card:focus-visible .click-indicator {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.admin-sidebar .nav-link {
+  padding: 0.75rem 1rem;
+  color: #6c757d;
+  border-radius: 0;
+}
+
+.admin-sidebar .nav-link.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.admin-sidebar .nav-link:hover:not(.active) {
+  background-color: #f8f9fa;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-section, .hero-modern {
+    padding: 2rem 0;
+  }
+  
+  .product-image {
+    height: 200px;
+  }
+}
+
+/* Loading animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.card-hover:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Footer styling */
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2rem 0 1rem;
+}
+
+.footer a {
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Button customizations */
+.btn-gift {
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  border: none;
+  color: white;
+}
+
+.btn-gift:hover {
+  background: linear-gradient(45deg, #ff5252, #ffcc02);
+  color: white;
+}
+
+/* Navbar profile avatar */
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hide dropdown caret on avatar toggle */
+#user-menu-dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Auth pages */
+.auth-hero {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0 18%, transparent 19%) 0 0/ 120px 120px,
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.06) 0 12%, transparent 13%) 0 0/ 140px 140px,
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Fill the viewport height (minus navbar) and center content vertically */
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+}
+
+.auth-card {
+  border-radius: 1rem;
+  backdrop-filter: saturate(120%);
+}
+
+.auth-card .form-control:focus {
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.15);
+}
+
+.auth-card .input-group-text {
+  background-color: #f8f9fa;
+}
+
+/* Modern Navbar */
+.navbar-modern {
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* above content */
+  margin-bottom: 0 !important; /* remove white gap */
+  background: rgba(33, 37, 41, 0.9); /* dark with slight transparency */
+  backdrop-filter: blur(4px) saturate(120%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-modern .nav-link,
+.navbar-modern .navbar-brand {
+  transition: color .15s ease;
+}
+
+.navbar-modern .nav-link:hover,
+.navbar-modern .navbar-brand:hover {
+  color: #e2e6ea !important;
+}
+
+/* Ensure hero starts flush under navbar */
+.hero-modern {
+  margin-top: 0 !important;
+}
+
+/* Product Detail image containment */
+.pd-img-box {
+  width: 100%;
+  height: 420px;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pd-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .pd-img-box {
+    height: 320px;
+  }
+}
